@@ -23,3 +23,11 @@
         - 자동완성이 좀 더 확실하게 지원됨
         (IDE에서는 CoreMatchers와 같은 Matcher 라이브러리의 자동완성 지원이 약함)
         - 백기선님 유튜브 참고(http://bit.ly/30vm9Lg)
+
+# 스프링 Bean 주입 방법
+    - @Autowired(지양)
+    - setter
+    - 생성자(권장)
+        - @RequiredArgsConstructor(final이나 @NonNull로 선언된 필드만 파라미터로 받는 생성자를 생성)
+        - @AllArgsConstructor(모든 필드를 파라미터로 받는 생성자를 생성)
+        - @NoArgsConstructor(아무 파라미터도 받지 않는 빈 생성자를 생성)
