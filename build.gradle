@@ -58,4 +58,7 @@ dependencies {
         어플리케이션을 재시작할때마다 초기화 됨(테스트 용도로 많이 사용)
      */
     compile('com.h2database:h2')
+
+    // 머스태치 의존성 추가
+    compile('org.springframework.boot:spring-boot-starter-mustache')
 }
