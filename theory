@@ -31,3 +31,9 @@
         - @RequiredArgsConstructor(final이나 @NonNull로 선언된 필드만 파라미터로 받는 생성자를 생성)
         - @AllArgsConstructor(모든 필드를 파라미터로 받는 생성자를 생성)
         - @NoArgsConstructor(아무 파라미터도 받지 않는 빈 생성자를 생성)
+
+# 스프링 시큐리티
+    - 스프링 기반의 어플리케이션에선 보안을 위한 표준
+    (인터셉터, 필터 기반의 보안 기능보다 스프링 시큐리티를 통해 구현하는것을 권장)
+    - spring-secutiry-oauth2-autoconfigure을 사용 시 스프링부트 버전에 상관없이 이전 버전의 설정도 그대로 사용 가능
+    -
