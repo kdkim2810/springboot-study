@@ -7,7 +7,7 @@
                 <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
                 <!-- 머스태치에서는 if문 같은것을 지원하지 않으므로 오직 true/false로 구분(값이 없는 경우 ^를 사용) -->
                 {{#userNameTest}}
-                    Logged in as: <span id="user">{{userNameTest}} + {{userName}}</span>
+                    Logged in as: <span id="user">{{userNameTest}}</span>
                     <!-- 스프링 시큐리티에서는 logout에 관한 컨트롤러를 만들 필요가 없음 -->
                     <a href="/logout" class="btn btn-info active" role="button">Logout</a>
                 {{/userNameTest}}
