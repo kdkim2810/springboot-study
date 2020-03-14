@@ -46,7 +46,7 @@ dependencies {
 
     // 롬복
     compile('org.projectlombok:lombok')
-    annotationProcessor('org.projectlombok:lombok')
+    //annotationProcessor('org.projectlombok:lombok')
 
     /*
     스프링 부트용 Spring Data Jpa 추상화 라이브러리
