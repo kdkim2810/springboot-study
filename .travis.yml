@@ -42,6 +42,7 @@ deploy:
     acl: private # zip 파일 접근을 private로
     local_dir: deploy # 비포에서 생성한 디렉토리명으로 지정하고 해당 위치의 파일들만 S3으로 전송
     wait-until-deployed: true
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
