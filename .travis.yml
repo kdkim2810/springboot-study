@@ -4,43 +4,43 @@ language: java
 jdk :
   - openjdk8
 
-# Travis CI¸¦ ¾î´À ºê·£Ä¡°¡ Çª½ÃµÉ¶§ ¼öÇàµÉÁö ÁöÁ¤
+# Travis CIë¥¼ ì–´ëŠ ë¸Œëœì¹˜ê°€ í‘¸ì‹œë ë•Œ ìˆ˜í–‰ë ì§€ ì§€ì •
 branches:
   only:
     - master
 
-# Travis CI ¼­¹öÀÇ HOME
-# ±×·¹ÀÌµéÀ» ÅëÇØ ÀÇÁ¸¼ºÀ» ¹Ş°Ô µÇ¸é ÀÌ¸¦ ÇØ´ç µğ·ºÅä¸®¿¡ Ä³½ÃÇÏ¿© °°Àº ÀÇÁ¸¼ºÀº ´ÙÀ½ ¹èÆ÷ ¶§ºÎÅÍ ´Ù½Ã ¹ŞÁö ¾Êµµ·Ï ¼³Á¤
+# Travis CI ì„œë²„ì˜ HOME
+# ê·¸ë ˆì´ë“¤ì„ í†µí•´ ì˜ì¡´ì„±ì„ ë°›ê²Œ ë˜ë©´ ì´ë¥¼ í•´ë‹¹ ë””ë ‰í† ë¦¬ì— ìºì‹œí•˜ì—¬ ê°™ì€ ì˜ì¡´ì„±ì€ ë‹¤ìŒ ë°°í¬ ë•Œë¶€í„° ë‹¤ì‹œ ë°›ì§€ ì•Šë„ë¡ ì„¤ì •
 cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
-# ½ºÅ©¸³Æ® ½ÇÇà Àü¿¡ ±ÇÇÑ ºÎ¿©
+# ìŠ¤í¬ë¦½íŠ¸ ì‹¤í–‰ ì „ì— ê¶Œí•œ ë¶€ì—¬
 before_script:
   - chmod +x gradlew
 
-# master ºê·£Ä¡¿¡ push µÇ¾úÀ» ¶§ ¼öÇàÇÏ´Â ¸í·É¾î
-# ÇÁ·ÎÁ§Æ® ³»ºÎ¿¡ µĞ gradlew¸¦ ÅëÇØ clean & build¸¦ ¼öÇà
+# master ë¸Œëœì¹˜ì— push ë˜ì—ˆì„ ë•Œ ìˆ˜í–‰í•˜ëŠ” ëª…ë ¹ì–´
+# í”„ë¡œì íŠ¸ ë‚´ë¶€ì— ë‘” gradlewë¥¼ í†µí•´ clean & buildë¥¼ ìˆ˜í–‰
 script: "./gradlew clean build"
 
 before_deploy:
   - zip -r springboot-study *
   - mkdir -p deploy
-  - mv springboot-study deploy/springboot-study.zip
+  - mv springboot-study.zip deploy/springboot-study.zip
 
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: springboot-study
-    region: ap-northeast-2
-    skip_cleanup: true
-    acl: private # zip ÆÄÀÏ Á¢±ÙÀ» private·Î
-    local_dir: deploy
-    wait-until-deployed: true
+      access_key_id: $AWS_ACCESS_KEY
+      secret_access_key: $AWS_SECRET_KEY
+      bucket: springboot-study
+      region: ap-northeast-2
+      skip_cleanup: true
+      acl: private # zip íŒŒì¼ ì ‘ê·¼ì„ privateë¡œ
+      local_dir: deploy
+      wait-until-deployed: true
 
-# CI ½ÇÇà ¿Ï·á ½Ã ¸ŞÀÏ·Î ¾Ë¶÷
+# CI ì‹¤í–‰ ì™„ë£Œ ì‹œ ë©”ì¼ë¡œ ì•ŒëŒ
 notifications:
   email:
     recipients:
