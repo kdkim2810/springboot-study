@@ -43,16 +43,16 @@ deploy:
     local_dir: deploy # 비포에서 생성한 디렉토리명으로 지정하고 해당 위치의 파일들만 S3으로 전송
     wait-until-deployed: true
 
-#  - provider: codedeploy
-#    access_key_id: $AWS_ACCESS_KEY
-#    secret_access_key: $AWS_SECRET_KEY
-#    bucket: springboot-study
-#    key: springboot-study.zip # 빌드 파일을 압축해서 전달
-#    bundle_type: zip # 압축 확장자
-#    application: springboot-study # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
-#    deployment_group: springboot-study-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
-#    region: ap-northeast-2
-#    wait-until-deployed: true
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: springboot-study
+    key: springboot-study.zip # 빌드 파일을 압축해서 전달
+    bundle_type: zip # 압축 확장자
+    application: springboot-study # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: springboot-study-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    region: ap-northeast-2
+    wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
