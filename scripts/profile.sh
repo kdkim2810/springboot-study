@@ -18,7 +18,7 @@ function find_idle_profile()
 
     if [ ${CURRENT_PROFILE} == real1 ]
     then
-        IDLE_PROFILE=real2  # 엔진엑스와 연결되지 않은 profile, 스프링 부트 프로젝트를 이 profile로 결하기위해 반환한다.
+        IDLE_PROFILE=real2  # 엔진엑스와 연결되지 않은 profile, 스프링 부트 프로젝트를 이 profile로 연결하기위해 반환한다.
     else
         IDLE_PROFILE=real1
     fi
